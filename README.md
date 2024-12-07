@@ -3,615 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn Together - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   <style>
-   /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-    background-color: #f4f4f9;
-    overflow-x: hidden;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header */
-header {
-    background-color: #1a73e8;
-    color: white;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 1.8rem;
-}
-
-/* Hamburger Button */
-.hamburger {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    width: 25px;
-}
-
-.hamburger .line {
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -300px;
-    width: 250px;
-    height: 100%;
-    background-color: #1a73e8;
-    color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    padding: 20px;
-}
-
-.sidebar ul {
-    list-style: none;
-}
-
-.sidebar ul li {
-    margin-bottom: 15px;
-}
-
-.sidebar ul li a {
-    color: white;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-    color: #ff9800;
-}
-
-/* Overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 500;
-}
-
-/* Sidebar Open */
-.sidebar.open {
-    left: 0;
-}
-
-.overlay.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(to right, #1a73e8, #00c6ff);
-    color: white;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-}
-
-.hero p {
-    margin: 20px 0;
-}
-
-.hero .btn {
-    background-color: #ff9800;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.hero .btn:hover {
-    background-color: #e68a00;
-}
-
-/* About Section */
-.about {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: white;
-}
-
-.about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.about .features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.feature {
-    margin: 10px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 250px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #ff9800;
-    margin: 0 5px;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #fff;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .feature {
-        width: 90%;
-    }
-}
-</style>
+    <title>Cash Flow Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2, h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .summary {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .summary p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+        canvas {
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Earn Together</h1>
-            <button class="hamburger" id="hamburger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
+    <div class="container" id="inputSection">
+        <h2>Cash Flow Statement - Input</h2>
+        <label for="openingBalance">Opening Balance (₹):</label>
+        <input type="number" id="openingBalance" placeholder="Enter opening balance" />
+
+        <h3>Cash Flow Entries</h3>
+        <div id="entryList"></div>
+
+        <select id="category">
+            <option value="Operating">Operating</option>
+            <option value="Investing">Investing</option>
+            <option value="Financing">Financing</option>
+        </select>
+        <input type="text" id="particular" placeholder="Enter particular" />
+        <select id="type">
+            <option value="+">Inflow</option>
+            <option value="-">Outflow</option>
+        </select>
+        <input type="number" id="amount" placeholder="Enter amount (₹)" />
+        <button onclick="addEntry()">Add Entry</button>
+
+        <button onclick="showOutput()">Generate Statement</button>
+    </div>
+
+    <div class="container" id="outputSection" style="display: none;">
+        <h2>Cash Flow Statement - Output</h2>
+
+        <div class="summary">
+            <h3>Summary</h3>
+            <p id="openingSummary"></p>
+            <p id="operatingSummary"></p>
+            <p id="investingSummary"></p>
+            <p id="financingSummary"></p>
+            <p id="closingSummary"></p>
         </div>
-    </header>
 
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar" id="sidebar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="announcement.html">Announcement</a></li>
-        </ul>
-    </nav>
+        <h3>Detailed Entries</h3>
+        <table id="cashFlowTable"></table>
 
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
+        <h3>Cash Flow Distribution</h3>
+        <canvas id="cashFlowChart" width="400" height="400"></canvas>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Welcome to Earn Together</h2>
-            <p>Invest Your Today For Your Better Tomorrow<br>Director - Chiranjeev</p>
-            <a href="invoice.html" class="btn">Join Us Today</a>
-        </div>
-    </section>
+        <button onclick="resetPage()">Reset</button>
+    </div>
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <h2>Why Choose Us?</h2>
-            <p>We provide customized, data-driven stock market solutions tailored to your financial goals.</p>
-            <div class="features">
-                <div class="feature">
-                    <h3>Personalized Strategies</h3>
-                    <p>Our solutions are designed to fit your specific investment needs and goals.</p>
-                </div>
-                <div class="feature">
-                    <h3>Expert Guidance</h3>
-                    <p>Our team of seasoned professionals ensures you stay ahead in the market.</p>
-                </div>
-                <div class="feature">
-                    <h3>Transparent Practices</h3>
-                    <p>We believe in maintaining complete transparency with our clients.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        const entries = [];
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Earn Together. All Rights Reserved.</p>
-            <p>Follow us on 
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://youtube.com/@jaiswalmusic.official?si=Y_cKeMyW8gBVdlGC" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>.
-            </p>
-        </div>
-    </footer>
+        function addEntry() {
+            const category = document.getElementById("category").value;
+            const particular = document.getElementById("particular").value;
+            const type = document.getElementById("type").value;
+            const amount = parseFloat(document.getElementById("amount").value);
 
-    <script>const hamburger = document.getElementById("hamburger");
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
+            if (!particular || isNaN(amount)) {
+                alert("Please fill in all fields.");
+                return;
+            }
 
-hamburger.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("visible");
-});
+            entries.push({ category, particular, type, amount });
+            renderEntries();
+            document.getElementById("particular").value = "";
+            document.getElementById("amount").value = "";
+        }
 
-overlay.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    overlay.classList.remove("visible");
-});
-</script>
+        function renderEntries() {
+            const entryList = document.getElementById("entryList");
+            entryList.innerHTML = "";
+            entries.forEach((entry, index) => {
+                const entryDiv = document.createElement("div");
+                entryDiv.textContent = `${entry.category} | ${entry.particular} | ${entry.type === "+" ? "Inflow" : "Outflow"} | ₹${entry.amount}`;
+                entryList.appendChild(entryDiv);
+            });
+        }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn Together - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   <style>
-   /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        function showOutput() {
+            const openingBalance = parseFloat(document.getElementById("openingBalance").value) || 0;
 
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-    background-color: #f4f4f9;
-    overflow-x: hidden;
-}
+            let operatingFlows = 0, investingFlows = 0, financingFlows = 0;
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+            entries.forEach(({ category, type, amount }) => {
+                const flow = (type === "+" ? 1 : -1) * amount;
 
-/* Header */
-header {
-    background-color: #1a73e8;
-    color: white;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+                if (category === "Operating") operatingFlows += flow;
+                if (category === "Investing") investingFlows += flow;
+                if (category === "Financing") financingFlows += flow;
+            });
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+            const closingBalance = openingBalance + operatingFlows + investingFlows + financingFlows;
 
-header h1 {
-    font-size: 1.8rem;
-}
+            document.getElementById("openingSummary").textContent = `Opening Balance: ₹${openingBalance.toFixed(2)}`;
+            document.getElementById("operatingSummary").textContent = `Net Cash Flow from Operating Activities: ₹${operatingFlows.toFixed(2)}`;
+            document.getElementById("investingSummary").textContent = `Net Cash Flow from Investing Activities: ₹${investingFlows.toFixed(2)}`;
+            document.getElementById("financingSummary").textContent = `Net Cash Flow from Financing Activities: ₹${financingFlows.toFixed(2)}`;
+            document.getElementById("closingSummary").textContent = `Closing Balance: ₹${closingBalance.toFixed(2)}`;
 
-/* Hamburger Button */
-.hamburger {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    width: 25px;
-}
+            renderTable();
+            renderPieChart([operatingFlows, investingFlows, financingFlows]);
 
-.hamburger .line {
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
+            document.getElementById("inputSection").style.display = "none";
+            document.getElementById("outputSection").style.display = "block";
+        }
 
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -300px;
-    width: 250px;
-    height: 100%;
-    background-color: #1a73e8;
-    color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    padding: 20px;
-}
+        function renderTable() {
+            const table = document.getElementById("cashFlowTable");
+            table.innerHTML = `
+                <tr>
+                    <th>Category</th>
+                    <th>Particular</th>
+                    <th>Inflow/Outflow</th>
+                    <th>Amount (₹)</th>
+                </tr>`;
+            entries.forEach(({ category, particular, type, amount }) => {
+                table.innerHTML += `
+                    <tr>
+                        <td>${category}</td>
+                        <td>${particular}</td>
+                        <td>${type === "+" ? "Inflow" : "Outflow"}</td>
+                        <td>${amount.toFixed(2)}</td>
+                    </tr>`;
+            });
+        }
 
-.sidebar ul {
-    list-style: none;
-}
+        function renderPieChart(values) {
+            const canvas = document.getElementById("cashFlowChart");
+            const ctx = canvas.getContext("2d");
+            const colors = ["#007bff", "#28a745", "#ffc107"];
+            const labels = ["Operating", "Investing", "Financing"];
+            const total = values.reduce((acc, val) => acc + Math.abs(val), 0);
 
-.sidebar ul li {
-    margin-bottom: 15px;
-}
+            let startAngle = 0;
+            values.forEach((value, index) => {
+                const sliceAngle = (Math.abs(value) / total) * 2 * Math.PI;
+                ctx.beginPath();
+                ctx.moveTo(200, 200);
+                ctx.arc(200, 200, 150, startAngle, startAngle + sliceAngle);
+                ctx.closePath();
+                ctx.fillStyle = colors[index];
+                ctx.fill();
 
-.sidebar ul li a {
-    color: white;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
+                const midAngle = startAngle + sliceAngle / 2;
+                const labelX = 200 + Math.cos(midAngle) * 180;
+                const labelY = 200 + Math.sin(midAngle) * 180;
+                ctx.fillStyle = "#000";
+                ctx.fillText(labels[index], labelX, labelY);
 
-.sidebar ul li a:hover {
-    color: #ff9800;
-}
+                startAngle += sliceAngle;
+            });
+        }
 
-/* Overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 500;
-}
-
-/* Sidebar Open */
-.sidebar.open {
-    left: 0;
-}
-
-.overlay.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(to right, #1a73e8, #00c6ff);
-    color: white;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-}
-
-.hero p {
-    margin: 20px 0;
-}
-
-.hero .btn {
-    background-color: #ff9800;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.hero .btn:hover {
-    background-color: #e68a00;
-}
-
-/* About Section */
-.about {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: white;
-}
-
-.about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.about .features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.feature {
-    margin: 10px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 250px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #ff9800;
-    margin: 0 5px;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #fff;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .feature {
-        width: 90%;
-    }
-}
-</style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Earn Together</h1>
-            <button class="hamburger" id="hamburger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar" id="sidebar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="announcement.html">Announcement</a></li>
-        </ul>
-    </nav>
-
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Welcome to Earn Together</h2>
-            <p>Invest Your Today For Your Better Tomorrow<br>Director - Chiranjeev</p>
-            <a href="invoice.html" class="btn">Join Us Today</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <h2>Why Choose Us?</h2>
-            <p>We provide customized, data-driven stock market solutions tailored to your financial goals.</p>
-            <div class="features">
-                <div class="feature">
-                    <h3>Personalized Strategies</h3>
-                    <p>Our solutions are designed to fit your specific investment needs and goals.</p>
-                </div>
-                <div class="feature">
-                    <h3>Expert Guidance</h3>
-                    <p>Our team of seasoned professionals ensures you stay ahead in the market.</p>
-                </div>
-                <div class="feature">
-                    <h3>Transparent Practices</h3>
-                    <p>We believe in maintaining complete transparency with our clients.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Earn Together. All Rights Reserved.</p>
-            <p>Follow us on 
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://youtube.com/@jaiswalmusic.official?si=Y_cKeMyW8gBVdlGC" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>.
-            </p>
-        </div>
-    </footer>
-
-    <script>const hamburger = document.getElementById("hamburger");
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
-
-hamburger.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("visible");
-});
-
-overlay.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    overlay.classList.remove("visible");
-});
-</script>
-
-
-</body>
-</html>
+        function resetPage() {
+            location.reload();
+        }
+    </script>
 </body>
 </html>
