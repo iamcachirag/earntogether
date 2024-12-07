@@ -304,6 +304,6 @@ overlay.addEventListener("click", () => {
 });
 </script>
 
-<script src="https://static.app/js/static.js" type="text/javascript"></script>
+
 </body>
 </html>
