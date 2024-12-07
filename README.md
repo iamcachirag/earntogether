@@ -1,218 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>World's Most Advanced Result Checking Platform</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    /* Reset and General Style */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn Together - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <style>
+   /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+/* Hamburger Button */
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #1a73e8;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #ff9800;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 500;
+}
+
+/* Sidebar Open */
+.sidebar.open {
+    left: 0;
+}
+
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #1a73e8, #00c6ff);
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    margin: 20px 0;
+}
+
+.hero .btn {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #e68a00;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature {
+    margin: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ff9800;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.2s ease;
+    .hero h2 {
+        font-size: 2rem;
     }
 
-    header {
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .feature {
+        width: 90%;
     }
-
-    /* Main Container */
-    .main-container {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      max-width: 700px;
-      text-align: center;
-    }
-
-    /* Form Section */
-    input[type="text"],
-    button {
-      padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
-      border: 1px solid #555;
-      outline: none;
-      transition: 0.2s ease;
-    }
-
-    input[type="text"]:focus,
-    button:hover {
-      border-color: #6a11cb;
-      background-color: #6a11cb;
-      color: white;
-    }
-
-    /* Chatbot Section */
-    .chatbot-container {
-      display: none;
-      padding: 10px;
-      border: 1px solid #666;
-      border-radius: 5px;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      width: 100%;
-      margin: 10px 0;
-    }
-
-    /* Results Table */
-    table {
-      margin-top: 20px;
-      width: 100%;
-      border-collapse: collapse;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    th,
-    td {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid #555;
-    }
-
-    th {
-      background-color: #6a11cb;
-      color: white;
-    }
-
-    /* Buttons */
-    .btn {
-      cursor: pointer;
-      background-color: #6a11cb;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      background-color: #2575fc;
-    }
-  </style>
+}
+</style>
 </head>
-
 <body>
-  <!-- Header -->
-  <header>World's Most Advanced Result Checking Platform 🎓</header>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Earn Together</h1>
+            <button class="hamburger" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+    </header>
 
-  <!-- Main Container -->
-  <div class="main-container">
-    <!-- Result Section -->
-    <div>
-      <h3>Check Your Results:</h3>
-      <input type="text" id="rollNumber" placeholder="Enter Your Roll Number" />
-      <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" />
-      <button class="btn" onclick="generateCaptcha()">Refresh CAPTCHA</button>
-      <span id="captchaText" style="font-size: 18px; color: #555;"></span>
-      <button class="btn" onclick="validateResults()">Check Results</button>
-    </div>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="announcement.html">Announcement</a></li>
+        </ul>
+    </nav>
 
-    <div class="chatbot-container" id="aiChatbot">
-      <h4>Ask AI a Question 💬</h4>
-      <input type="text" id="aiInput" placeholder="Ask me anything about studies..." />
-      <button class="btn" onclick="askAI()">Submit</button>
-      <div id="aiResponse" style="margin: 10px 0; color: #333;"></div>
-    </div>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
 
-    <!-- Results Section -->
-    <div style="display:none" id="resultsSection">
-      <table>
-        <thead>
-          <tr>
-            <th>Roll No</th>
-            <th>Father's Name</th>
-            <th>Mother's Name</th>
-            <th>Mobile No</th>
-            <th>Hindi</th>
-            <th>English</th>
-            <th>Accounts</th>
-            <th>Economics</th>
-            <th>Business Studies</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td id="resultRoll">--</td>
-            <td id="resultFather">--</td>
-            <td id="resultMother">--</td>
-            <td id="resultMobile">--</td>
-            <td id="resultHindi">--</td>
-            <td id="resultEnglish">--</td>
-            <td id="resultAccounts">--</td>
-            <td id="resultEconomics">--</td>
-            <td id="resultBusinessStudies">--</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to Earn Together</h2>
+            <p>Invest Your Today For Your Better Tomorrow<br>Director - Chiranjeev</p>
+            <a href="invoice.html" class="btn">Join Us Today</a>
+        </div>
+    </section>
 
-  <script>
-    let generatedCaptcha = '';
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <p>We provide customized, data-driven stock market solutions tailored to your financial goals.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Personalized Strategies</h3>
+                    <p>Our solutions are designed to fit your specific investment needs and goals.</p>
+                </div>
+                <div class="feature">
+                    <h3>Expert Guidance</h3>
+                    <p>Our team of seasoned professionals ensures you stay ahead in the market.</p>
+                </div>
+                <div class="feature">
+                    <h3>Transparent Practices</h3>
+                    <p>We believe in maintaining complete transparency with our clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    const studentData = {
-      '1234': { father: 'Sanjeev Gupta', mother: 'Poonam Gupta', mobile: '9876543210', hindi: 85, english: 88, accounts: 92, economics: 77, businessStudies: 89 },
-      '5678': { father: 'Amit Sharma', mother: 'Sunita Sharma', mobile: '8765432109', hindi: 89, english: 93, accounts: 88, economics: 85, businessStudies: 86 },
-    };
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Earn Together. All Rights Reserved.</p>
+            <p>Follow us on 
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com/@jaiswalmusic.official?si=Y_cKeMyW8gBVdlGC" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>.
+            </p>
+        </div>
+    </footer>
 
-    function generateCaptcha() {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      let captcha = '';
-      for (let i = 0; i < 5; i++) {
-        captcha += chars[Math.floor(Math.random() * chars.length)];
-      }
-      generatedCaptcha = captcha;
-      document.getElementById('captchaText').innerText = captcha;
-    }
+    <script>const hamburger = document.getElementById("hamburger");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
 
-    function validateResults() {
-      const rollNumber = document.getElementById('rollNumber').value;
-      if (studentData[rollNumber]) {
-        const student = studentData[rollNumber];
-        document.getElementById('resultRoll').innerText = rollNumber;
-        document.getElementById('resultFather').innerText = student.father;
-        document.getElementById('resultMother').innerText = student.mother;
-        document.getElementById('resultMobile').innerText = student.mobile;
-        document.getElementById('resultHindi').innerText = student.hindi;
-        document.getElementById('resultEnglish').innerText = student.english;
-        document.getElementById('resultAccounts').innerText = student.accounts;
-        document.getElementById('resultEconomics').innerText = student.economics;
-        document.getElementById('resultBusinessStudies').innerText = student.businessStudies;
-        document.getElementById('resultsSection').style.display = 'block';
-      } else {
-        alert('Roll number not found.');
-      }
-    }
+hamburger.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("visible");
+});
 
-    function askAI() {
-      const query = document.getElementById('aiInput').value;
-      document.getElementById('aiResponse').innerText = 'Let me think...';
-      setTimeout(() => {
-        document.getElementById('aiResponse').innerText = `You asked: "${query}". This is a common question about studies!`;
-      }, 1000);
-    }
+overlay.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+    overlay.classList.remove("visible");
+});
+</script>
 
-    generateCaptcha();
-  </script>
+<script src="https://static.app/js/static.js" type="text/javascript"></script>
 </body>
-
 </html>
