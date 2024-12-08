@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn Together - Invest Smartly</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Header and Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, #0056b3, #003d80);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        #menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        #menu {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        #menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        #menu li a:hover {
+            color: #ffa500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffa500;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #e68a00;
+        }
+
+        /* Why Choose Us Section */
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #0056b3;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #ffa500;
+            margin: 0.5rem auto 0;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .features .feature {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 2rem);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .features .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .features .feature h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #0056b3;
+        }
+
+        .features .feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #0056b3, #003d80);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 -6px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            color: #ddd;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffa500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .features .feature {
+                width: 100%;
+            }
+            #menu {
+                display: none;
+            }
+            #menu-toggle {
+                display: block;
+            }
+            #menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #0056b3;
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Earn Together</div>
+            <button id="menu-toggle">&#9776;</button>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Welcome to Earn Together</h1>
+        <p>Invest your today for a better tomorrow</p>
+        <a href="#services" class="cta-button">Join Us Today</a>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="services">
+        <h2>Why Choose Us?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Personalized Strategies</h3>
+                <p>Our solutions are tailored to your specific financial goals and investment needs.</p>
+            </div>
+            <div class="feature">
+                <h3>Expert Guidance</h3>
+                <p>Our experienced professionals guide you to stay ahead in the market.</p>
+            </div>
+            <div class="feature">
+                <h3>Transparency</h3>
+                <p>We believe in maintaining complete transparency with our clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Earn Together</h3>
+        <p>Your trusted partner in smart investments.</p>
+        <div class="social-icons">
+            <a href="#">&#128222;</a>
+            <a href="#">&#127760;</a>
+            <a href="#">&#9993;</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
